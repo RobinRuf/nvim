@@ -13,6 +13,22 @@ return {
     },
   },
 
+  -- highlighters for HEX Colors
+  {
+    "echasnovski/mini.hipatterns",
+    event = "BufReadPre",
+    opts = {
+      highlighters = {
+        hex_color = {
+          pattern = "#[0-9a-fA-F]{6}\\b",
+          group = function(_, match)
+            return MiniHipatterns.compute_hex_color_group(match, "bg")
+          end,
+        },
+      },
+    },
+  },
+
   {
     "dinhhuy258/git.nvim",
     event = "BufReadPre",
