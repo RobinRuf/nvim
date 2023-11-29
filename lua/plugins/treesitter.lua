@@ -17,6 +17,8 @@ return {
         "scss",
         "sql",
         "svelte",
+        "javascript",
+        "typescript",
       },
     },
     config = function(_, opts)
