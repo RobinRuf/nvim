@@ -11,6 +11,7 @@ return {
         "tailwindcss-language-server",
         "typescript-language-server",
         "css-lsp",
+        "rust-analyzer",
       })
     end,
   },
@@ -63,6 +64,18 @@ return {
           settings = {
             yaml = {
               keyOrdering = false,
+            },
+          },
+        },
+        rust_analyzer = {
+          settings = {
+            ["rust-analyzer"] = {
+              procMacro = { enable = true },
+              cargo = { allFeatures = true },
+              checkOnSave = {
+                command = "clippy",
+                extraArgs = { "--no-deps" },
+              },
             },
           },
         },
