@@ -12,35 +12,36 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.number = true -- enables line numbers
 
 vim.opt.title = true -- shows the file name in the terminal title
+vim.opt.shiftwidth = 4 -- defines 2 spaces as indent
+vim.opt.tabstop = 4 -- defines 2 spaces as indent with tabs
 vim.opt.autoindent = true
 vim.opt.smartindent = true -- extended indent
+vim.opt.smarttab = true
+vim.opt.expandtab = true -- change tabs to spaces
+vim.opt.breakindent = true -- keeps the indent, even line will be switched
 vim.opt.hlsearch = true -- highlights search results
 vim.opt.backup = false -- disables backups
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 2 -- always shows the statusbar
-vim.opt.expandtab = true -- change tabs to spaces
-vim.opt.scrolloff = 10 -- keeps the cursor on 10th line from above while scolling up
+vim.opt.scrolloff = 8 -- keeps the cursor on 10th line from above while scolling up
 vim.opt.backupskip = { "/tmp/*", "/private/tmp/*" } -- do not take any backups of these folders
 vim.opt.inccommand = "split" -- shows preview of incremental rename
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
-vim.opt.smarttab = true
-vim.opt.breakindent = true -- keeps the indent, even line will be switched
-vim.opt.shiftwidth = 2 -- defines 2 spaces as indent
-vim.opt.tabstop = 2 -- defines 2 spaces as indent with tabs
 vim.opt.wrap = false -- No Wrap lines
+vim.opt.swapfile = false
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({
-  "*/node_modules/*",
-  "*/build/*",
-  "*/target/*",
-  "*/venv/*",
-  "*/.venv/*",
-  "*/__pycache__/*",
-  "*/.git/*",
-  "*.a",
-  "*.o",
+    "*/node_modules/*",
+    "*/build/*",
+    "*/target/*",
+    "*/venv/*",
+    "*/.venv/*",
+    "*/__pycache__/*",
+    "*/.git/*",
+    "*.a",
+    "*.o",
 }) -- defines, which folders should be ignored while searching
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
@@ -60,5 +61,5 @@ vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
 
 -- checks if the used nvim version is 0.8 or above and if so, it sets cmdheight to 0 so the cmd line is just visible if used and not everytime
 if vim.fn.has("nvim-0.8") == 1 then
-  vim.opt.cmdheight = 0
+    vim.opt.cmdheight = 0
 end
