@@ -2,6 +2,9 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- Additional Configs
+vim.g.autoformat = false -- IMPORTANT: Disables the autoformat and autoindent, which is needed if working on open source projects with different indent settings
+
 -- Basic Configs
 vim.g.mapleader = " " -- sets SPACE to the leader for special commands
 
