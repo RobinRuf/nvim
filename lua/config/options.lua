@@ -15,8 +15,8 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.number = true -- enables line numbers
 
 vim.opt.title = true -- shows the file name in the terminal title
-vim.opt.shiftwidth = 4 -- defines 2 spaces as indent
-vim.opt.tabstop = 4 -- defines 2 spaces as indent with tabs
+vim.opt.shiftwidth = 2 -- defines 2 spaces as indent
+vim.opt.tabstop = 2 -- defines 2 spaces as indent with tabs
 vim.opt.autoindent = true
 vim.opt.smartindent = true -- extended indent
 vim.opt.smarttab = true

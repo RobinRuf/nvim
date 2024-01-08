@@ -77,6 +77,17 @@ return {
         desc = "Lists files in your current working directory, respects .gitignore",
       },
       {
+        ";g",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.git_files({
+            no_ignore = false,
+            hidden = true,
+          })
+        end,
+        desc = "Fuzzy search through the output of git ls-files command, respects .gitignore",
+      },
+      {
         ";r",
         function()
           local builtin = require("telescope.builtin")
@@ -205,7 +216,6 @@ return {
       telescope.setup(opts)
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
-      require("telescope").load_extension("harpoon")
     end,
   },
 }

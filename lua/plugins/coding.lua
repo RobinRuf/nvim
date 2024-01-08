@@ -63,7 +63,7 @@ return {
         harpoon:list():append()
       end)
       vim.keymap.set("n", "<C-e>", function()
-        harpoon.ui:toggle_quick_menu(harpoon:list())
+        harpoon.ui:toggle_quick_menu(harpoon:list(), { border = "rounded", title_pos = "center" })
       end)
 
       vim.keymap.set("n", "<leader>1", function()
