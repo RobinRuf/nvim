@@ -11,12 +11,6 @@ keymap.set("n", "-", "<C-x>")
 -- Delete a word backwards
 keymap.set("n", "db", "ldb")
 
--- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
-
--- Jumplist
-keymap.set("n", "<C-m>", "<C-i>", opts)
-
 -- New Tab
 keymap.set("n", "te", ":tabedit<Return>")
 keymap.set("n", "<tab>", ":tabnext<Return>")
@@ -32,11 +26,9 @@ keymap.set("n", "sk", "<C-w>k")
 keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sl", "<C-w>l")
 
--- Resize Window
-keymap.set("n", "<C-w><left>", "<c-w><")
-keymap.set("n", "<C-w><right>", "<c-w>>")
-keymap.set("n", "<C-w><up>", "<c-w>+")
-keymap.set("n", "<C-w><down>", "<c-w>-")
+-- Move Line
+keymap.set('v', "<A-k>", ":m .-2<CR>gv", opts) -- move line up
+keymap.set('v', "<A-j>", ":m .+1<CR>gv", opts) -- move line down
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
