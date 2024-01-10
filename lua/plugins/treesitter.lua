@@ -3,7 +3,8 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "astro",
+        "html",
+        "css",
         "cmake",
         "cpp",
         "css",
@@ -15,14 +16,26 @@ return {
         "php",
         "rust",
         "scss",
+        "markdown",
+        "markdown_inline",
+        "python",
         "sql",
         "svelte",
+        "query",
+        "regex",
+        "tsx",
         "javascript",
         "typescript",
+        "yaml",
       },
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
+
+      -- HTML autopairs
+      opts.autotag = {
+        enable = true,
+      }
 
       -- MDX
       vim.filetype.add({
