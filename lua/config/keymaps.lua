@@ -27,8 +27,8 @@ keymap.set("n", "sj", "<C-w>j")
 keymap.set("n", "sl", "<C-w>l")
 
 -- Move Line
-keymap.set('v', "<A-k>", ":m .-2<CR>gv", opts) -- move line up
-keymap.set('v', "<A-j>", ":m .+1<CR>gv", opts) -- move line down
+keymap.set('v', "<A-k>", ":m '<-2<cr>gv", opts) -- move line up
+keymap.set('v', "<A-j>", ":m '>+1<cr>gv", opts) -- move line down
 keymap.set('n', "<A-k>", "", opts) -- override global keymap with empfty cmd to disable it
 keymap.set('n', "<A-j>", "", opts) -- override global keymap with empfty cmd to disable it
 keymap.set('i', "<A-k>", "", opts) -- override global keymap with empfty cmd to disable it
