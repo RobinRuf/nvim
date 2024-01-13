@@ -21,24 +21,6 @@ return {
     config = true,
   },
 
-  -- Refactoring tool
-  {
-    "ThePrimeagen/refactoring.nvim",
-    keys = {
-      {
-        "<leader>r",
-        function()
-          require("refactoring").select_refactor()
-        end,
-        mode = "v",
-        noremap = true,
-        silent = true,
-        expr = false,
-      },
-    },
-    opts = {},
-  },
-
   -- Show Emojis in autocomplete, if something like ':smile' was written
   {
     "nvim-cmp",
