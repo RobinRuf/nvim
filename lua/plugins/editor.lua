@@ -36,7 +36,21 @@ return {
     config = function()
       vim.api.nvim_set_keymap('n', '<Leader>gd', ':Gvdiffsplit<Enter>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<Leader>gb', ':Git blame<Enter>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<Leader>gc', ':Git commit<Enter>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<Leader>gc', ':Git commit<Enter>', { noremap = false, silent = true })
+    end,
+  },
+
+  -- Git Worktree
+  {
+    "ThePrimeagen/git-worktree.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim", 
+    },
+    config = function()
+      require("git-worktree").setup({
+        vim.api.nvim_set_keymap('n', ';w', "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", { noremap = true, silent = true }),
+        vim.api.nvim_set_keymap('n', ';cw', "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", { noremap = true, silent = true })
+      })
     end,
   },
 
@@ -157,6 +171,8 @@ return {
       local telescope = require("telescope")
       local actions = require("telescope.actions")
       local fb_actions = require("telescope").extensions.file_browser.actions
+
+      telescope.load_extension("git_worktree")
 
       opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
         wrap_results = true,
