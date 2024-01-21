@@ -8,11 +8,23 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   command = "set nopaste",
 })
 
--- Fix conceallevel for json files
+-- Fox conceallevel for json files
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "json", "jsonc" },
   callback = function()
     vim.wo.spell = false
     vim.wo.conceallevel = 0
+  end,
+})
+
+-- Changes indents from 4 to 2 for specific files because of language conventions
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { 
+    "css", "html", "javascript", "typescript", "javascriptreact", "typescriptreact",
+    "json", "cmake", "graphql", "scss", "sql", "svelte", "query", "yaml"
+  },
+  callback = function()
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
   end,
 })
