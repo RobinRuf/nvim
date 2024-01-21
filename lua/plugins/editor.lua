@@ -29,23 +29,17 @@ return {
     },
   },
 
+  -- Fugitive
   {
-    "dinhhuy258/git.nvim",
+    "tpope/vim-fugitive",
     event = "BufReadPre",
-    opts = {
-      keymaps = {
-        -- Open blame window
-        blame = "<Leader>gb",
-        -- Open file/folder in git repository
-        browse = "<Leader>go",
-        -- Opens a new diff that compares against the current index
-        diff = "<Leader>gd",
-        -- Close git diff
-        diff_close = "<Leader>gD",
-      },
-    },
+    config = function()
+      vim.api.nvim_set_keymap('n', '<Leader>gd', ':Gvdiffsplit<Enter>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<Leader>gb', ':Git blame<Enter>', { noremap = true, silent = true })
+    end,
   },
 
+  -- Telescope
   {
     "telescope.nvim",
     dependencies = {
