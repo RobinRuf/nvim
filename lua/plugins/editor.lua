@@ -36,7 +36,7 @@ return {
     config = function()
       vim.api.nvim_set_keymap('n', '<Leader>gd', ':Gvdiffsplit<Enter>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<Leader>gb', ':Git blame<Enter>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<Leader>gc', ':Git commit<Enter>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<Leader>c', ':Git commit<Enter>', { noremap = true, silent = true })
     end,
   },
 
