@@ -30,15 +30,16 @@ return {
   },
 
   -- Fugitive
-  {
-    "tpope/vim-fugitive",
-    event = "BufReadPre",
-    config = function()
-      vim.api.nvim_set_keymap('n', '<Leader>gd', ':Gvdiffsplit<Enter>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<Leader>gb', ':Git blame<Enter>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<Leader>c', ':Git commit<Enter>', { noremap = true, silent = true })
-    end,
-  },
+    -- Commented this out, because I am using LazyGit now https://github.com/jesseduffield/lazygit
+  -- {
+   --  "tpope/vim-fugitive",
+    --  event = "BufReadPre",
+    --  config = function()
+    --  vim.api.nvim_set_keymap('n', '<Leader>gd', ':Gvdiffsplit<Enter>', { noremap = true, silent = true })
+    --  vim.api.nvim_set_keymap('n', '<Leader>gb', ':Git blame<Enter>', { noremap = true, silent = true })
+    --  vim.api.nvim_set_keymap('n', '<Leader>c', ':Git commit<Enter>', { noremap = true, silent = true })
+    --  end,
+    --  },
 
   -- Git Worktree
   {
